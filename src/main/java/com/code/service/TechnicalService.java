@@ -9,8 +9,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.code.dominio.TechnicalRequest;
-import com.code.dominio.TechnicalResponse;
+import com.code.dto.TechnicalRequestDTO;
+import com.code.dto.TechnicalResponseDTO;
 import com.code.entity.TechnicalEntity;
 import com.code.repository.TechnicalRepository;
 
@@ -35,7 +35,7 @@ public class TechnicalService  implements TechnicalInterfacesService{
 	 * Metodo encargado de guardar los datos del técnico, como la identificacion,
 	 * identificacion de servicio, fecha de inicio y horas.
 	 */
-	public TechnicalRequest save(TechnicalRequest tr) {
+	public TechnicalRequestDTO save(TechnicalRequestDTO tr) {
 		
 		try {
 			for (int i = 0; i < tr.getWorkedDays().size(); i++) {
@@ -73,7 +73,7 @@ public class TechnicalService  implements TechnicalInterfacesService{
 	 * Metodo encargado de realizar, calculo de las 
 	 * semanas y hoaras extra.
 	 */
-	public TechnicalResponse getTechnicalCalculation(String identify, String numberW) {
+	public TechnicalResponseDTO getTechnicalCalculation(String identify, String numberW) {
 		
 		 double cont =0;
 		 double dayByHour=0;
@@ -83,7 +83,7 @@ public class TechnicalService  implements TechnicalInterfacesService{
 		 double exNightByHour=0;
 		 double exSundayByHour=0;
 	
-		TechnicalResponse technicalResponse = new TechnicalResponse();
+		TechnicalResponseDTO technicalResponse = new TechnicalResponseDTO();
 		List<TechnicalEntity> tr = new ArrayList<TechnicalEntity>();
 		tr = technicalRepository.findByIdentifyTechnicalAndNumberWeekOrderByEndDate(identify,numberW);
 		

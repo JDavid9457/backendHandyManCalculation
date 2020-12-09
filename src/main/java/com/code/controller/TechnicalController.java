@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.code.dominio.TechnicalRequest;
-import com.code.dominio.TechnicalResponse;
+import com.code.dto.TechnicalRequestDTO;
+import com.code.dto.TechnicalResponseDTO;
 import com.code.entity.TechnicalEntity;
 import com.code.service.TechnicalService;
 
@@ -42,14 +42,14 @@ public class TechnicalController {
 	 *Metodo encargado de guarda los datos 
 	 */
 	@PostMapping("api/technical/save")
-	public ResponseEntity<String> save(@RequestBody TechnicalRequest tr){
+	public ResponseEntity<String> save(@RequestBody TechnicalRequestDTO tr){
 		technicalService.save(tr);
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 	
 	
 	@GetMapping("/{identifyTechnical}/{numberWeek}")
-	public @ResponseBody TechnicalResponse getReport(@PathVariable(name="identifyTechnical") String identifyTechnical, @PathVariable(name="numberWeek") String numberWeek) {
+	public @ResponseBody TechnicalResponseDTO getReport(@PathVariable(name="identifyTechnical") String identifyTechnical, @PathVariable(name="numberWeek") String numberWeek) {
 		
 		return technicalService.getTechnicalCalculation(identifyTechnical,numberWeek);
 	}

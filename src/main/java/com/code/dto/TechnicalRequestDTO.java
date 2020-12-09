@@ -1,8 +1,8 @@
-package com.code.dominio;
+package com.code.dto;
 
 import java.util.List;
 
-public class TechnicalRequest {
+public class TechnicalRequestDTO {
 
 	// -----------------------------------------------------------------
     // Atributos
@@ -10,7 +10,7 @@ public class TechnicalRequest {
 	/**
 	 * lista de trabajo por días 
 	 */
-	private  List<WorkedDays>workedDays;
+	private  List<WorkedDaysDTO>workedDays;
 	/**
 	 *  identificación de tecnico
 	 */
@@ -26,7 +26,7 @@ public class TechnicalRequest {
     // -----------------------------------------------------------------
 	
 	
-	public TechnicalRequest() {
+	public TechnicalRequestDTO() {
 		
 	}
 	
@@ -50,11 +50,11 @@ public class TechnicalRequest {
 		this.identifyService = identifyService;
 	}
 
-	public List<WorkedDays> getWorkedDays() {
+	public List<WorkedDaysDTO> getWorkedDays() {
 		return workedDays;
 	}
 
-	public void setWorkedDays(List<WorkedDays> workedDays) {
+	public void setWorkedDays(List<WorkedDaysDTO> workedDays) {
 		this.workedDays = workedDays;
 	}
 

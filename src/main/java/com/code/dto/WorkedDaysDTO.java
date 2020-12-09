@@ -1,11 +1,11 @@
-package com.code.dominio;
+package com.code.dto;
 
 import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Column;
 
-public class WorkedDays {
+public class WorkedDaysDTO {
 
 	// -----------------------------------------------------------------
     // Atributos
@@ -42,7 +42,7 @@ public class WorkedDays {
 	// -----------------------------------------------------------------
     // Métodos
     // -----------------------------------------------------------------
-	public WorkedDays(String numberWeek,float dayByHour, float nightByHour, float sundayByHour,  Date startDate, Date endDate) {
+	public WorkedDaysDTO(String numberWeek,float dayByHour, float nightByHour, float sundayByHour,  Date startDate, Date endDate) {
 		super();
 		this.numberWeek =numberWeek;
 		this.dayByHour = dayByHour;

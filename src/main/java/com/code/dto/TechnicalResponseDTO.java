@@ -1,6 +1,6 @@
-package com.code.dominio;
+package com.code.dto;
 
-public class TechnicalResponse {
+public class TechnicalResponseDTO {
 	
 	// -----------------------------------------------------------------
     // Atributos

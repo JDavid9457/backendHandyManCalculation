@@ -12,9 +12,9 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.code.dominio.TechnicalRequest;
-import com.code.dominio.TechnicalResponse;
-import com.code.dominio.WorkedDays;
+import com.code.dto.TechnicalRequestDTO;
+import com.code.dto.TechnicalResponseDTO;
+import com.code.dto.WorkedDaysDTO;
 import com.code.service.TechnicalService;
 
 @SpringBootTest
@@ -30,12 +30,12 @@ class BackedHandyManCalculationApplicationTests {
 	}
 	
 	
-    public TechnicalRequest TechnicalRequest() {
+    public TechnicalRequestDTO TechnicalRequest() {
     	
     	
-    	TechnicalRequest technical = new TechnicalRequest();
+    	TechnicalRequestDTO technical = new TechnicalRequestDTO();
     	//WorkedDays workedDays = new WorkedDays(identifyService, 0, 0, 0, null, null);
-    	List<WorkedDays> listWorkedDays = new  ArrayList<WorkedDays>();
+    	List<WorkedDaysDTO> listWorkedDays = new  ArrayList<WorkedDaysDTO>();
     	//listWorkedDays.add(workedDays);
     	listWorkedDays.get(0).setDayByHour(8);
     	listWorkedDays.get(0).setNightByHour(4);
@@ -51,7 +51,7 @@ class BackedHandyManCalculationApplicationTests {
     public void saveTeechnicalTest() {
     	
     	TechnicalService technicalS = new TechnicalService();
-    	TechnicalRequest request = new TechnicalRequest();
+    	TechnicalRequestDTO request = new TechnicalRequestDTO();
     	
     	request = technicalS.save(TechnicalRequest());
     	assertNotNull(request);
@@ -63,7 +63,7 @@ class BackedHandyManCalculationApplicationTests {
     @Test
 	public void getTechnicalTest() {
     	TechnicalService technicalS = new TechnicalService();
-    	TechnicalResponse response = new TechnicalResponse();
+    	TechnicalResponseDTO response = new TechnicalResponseDTO();
     	
 	}
 	
