@@ -34,9 +34,9 @@ class BackedHandyManCalculationApplicationTests {
     	
     	
     	TechnicalRequestDTO technical = new TechnicalRequestDTO();
-    	//WorkedDays workedDays = new WorkedDays(identifyService, 0, 0, 0, null, null);
+    	WorkedDaysDTO workedDays = new WorkedDaysDTO();
     	List<WorkedDaysDTO> listWorkedDays = new  ArrayList<WorkedDaysDTO>();
-    	//listWorkedDays.add(workedDays);
+    	listWorkedDays.add(workedDays);
     	listWorkedDays.get(0).setDayByHour(8);
     	listWorkedDays.get(0).setNightByHour(4);
     	listWorkedDays.get(0).setSundayByHour(2);

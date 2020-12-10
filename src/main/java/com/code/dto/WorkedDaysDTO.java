@@ -42,14 +42,8 @@ public class WorkedDaysDTO {
 	// -----------------------------------------------------------------
     // Métodos
     // -----------------------------------------------------------------
-	public WorkedDaysDTO(String numberWeek,float dayByHour, float nightByHour, float sundayByHour,  Date startDate, Date endDate) {
-		super();
-		this.numberWeek =numberWeek;
-		this.dayByHour = dayByHour;
-		this.nightByHour = nightByHour;
-		this.sundayByHour= sundayByHour;
-		this.startDate = startDate;
-		this.endDate= endDate;
+	public WorkedDaysDTO() {
+
 	}
 	
 	
